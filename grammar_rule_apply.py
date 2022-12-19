@@ -31,3 +31,11 @@ assert eq(
         0
     ), 
     'cdb')
+
+assert eq(
+    grammar_rule_apply(
+        'abe',
+        grammar_rule('a', 'cd'),
+        0
+    ), 
+    'cdbe')
