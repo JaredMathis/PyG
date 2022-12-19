@@ -1,4 +1,5 @@
 from grammar_rule_part import grammar_rule_part
+from str_log import str_log
 
 class grammar_rule:
     def __init__(
@@ -17,4 +18,5 @@ class grammar_rule:
     def __str__(self) -> str:
         return str(self.left) + ' > ' + str(self.right)
 
-assert str(grammar_rule('a', 'aa')) == 'a > aa'
+assert str_log(grammar_rule('a', 'aa')) == "['a'] > ['a', 'a']"
+assert str_log(grammar_rule(['a'], ['a','a'])) == "['a'] > ['a', 'a']"
