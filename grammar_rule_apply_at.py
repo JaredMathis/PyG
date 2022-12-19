@@ -5,7 +5,8 @@ from int_natural import int_natural
 from log_me import log_me
 
 
-def grammar_rule_apply(current: list, rule, position):
+def grammar_rule_apply_at(current: list, rule, position):
+    """Applies a grammar rule at a particular position"""
     if type(current) != grammar_rule_part:
         current = grammar_rule_part(current)
     assert type(rule) == grammar_rule
@@ -17,7 +18,7 @@ def grammar_rule_apply(current: list, rule, position):
     return grammar_rule_part(result)
 
 assert eq(
-    grammar_rule_apply(
+    grammar_rule_apply_at(
         'bae',
         grammar_rule('a', 'cd'),
         1
@@ -25,7 +26,7 @@ assert eq(
     'bcde')
 
 assert eq(
-    grammar_rule_apply(
+    grammar_rule_apply_at(
         'ab',
         grammar_rule('a', 'cd'),
         0
@@ -33,7 +34,7 @@ assert eq(
     'cdb')
 
 assert eq(
-    grammar_rule_apply(
+    grammar_rule_apply_at(
         'abe',
         grammar_rule('a', 'cd'),
         0
