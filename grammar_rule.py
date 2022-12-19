@@ -6,7 +6,10 @@ class grammar_rule:
         left, 
         right) -> None:
 
-        assert 1 == 1
+        if (type(left) != grammar_rule_part):
+            left = grammar_rule_part(left)
+        if (type(right) != grammar_rule_part):
+            right = grammar_rule_part(right)
 
         self.left = left
         self.right = right
@@ -15,7 +18,7 @@ class grammar_rule:
         return str(self.left) + ' > ' + str(self.right)
 
 g = grammar_rule(
-    grammar_rule_part('a'), 
-    grammar_rule_part('aa'))
+    'a', 
+    'aa')
 
 print(g)
