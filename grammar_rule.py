@@ -20,7 +20,8 @@ class grammar_rule:
         return str(self.left) + ' > ' + str(self.right)
 
 assert eq(
-    str(grammar_rule('a', 'aa')), 
+    str(
+        grammar_rule(grammar_rule_part('a'), grammar_rule_part('aa'))), 
     "['a'] > ['a', 'a']")
 assert eq(
     str(grammar_rule('a', 'aa')), 
