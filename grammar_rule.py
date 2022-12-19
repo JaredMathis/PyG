@@ -11,6 +11,6 @@ class grammar_rule:
     def __str__(self) -> str:
         return self.left + ' > ' + self.right
 
-g = grammar_rule('a', 'aa')
+# g = grammar_rule('a', 'aa')
 
-print(g)
+# print(g)
