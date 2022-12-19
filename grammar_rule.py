@@ -1,5 +1,10 @@
+from grammar_rule_part import grammar_rule_part
+
 class grammar_rule:
-    def __init__(self, left, right):
+    def __init__(
+        self, 
+        left: grammar_rule_part, 
+        right: grammar_rule_part) -> None:
         self.left = left
         self.right = right
     
