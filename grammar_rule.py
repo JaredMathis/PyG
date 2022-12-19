@@ -3,14 +3,19 @@ from grammar_rule_part import grammar_rule_part
 class grammar_rule:
     def __init__(
         self, 
-        left: grammar_rule_part, 
-        right: grammar_rule_part) -> None:
+        left, 
+        right) -> None:
+
+        assert 1 == 1
+
         self.left = left
         self.right = right
     
     def __str__(self) -> str:
-        return self.left + ' > ' + self.right
+        return str(self.left) + ' > ' + str(self.right)
 
-# g = grammar_rule('a', 'aa')
+g = grammar_rule(
+    grammar_rule_part('a'), 
+    grammar_rule_part('aa'))
 
-# print(g)
+print(g)
