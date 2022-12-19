@@ -21,7 +21,9 @@ class grammar_rule:
 
 assert eq(
     str(
-        grammar_rule(grammar_rule_part('a'), grammar_rule_part('aa'))), 
+        grammar_rule(
+            grammar_rule_part('a'), 
+            grammar_rule_part('aa'))), 
     "['a'] > ['a', 'a']")
 assert eq(
     str(grammar_rule('a', 'aa')), 
