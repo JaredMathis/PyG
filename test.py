@@ -1,1 +1,1 @@
-print ('tets')
+print ('test')
