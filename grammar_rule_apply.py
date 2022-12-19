@@ -18,8 +18,16 @@ def grammar_rule_apply(current: list, rule, position):
 
 assert eq(
     grammar_rule_apply(
-        'bab',
+        'bae',
         grammar_rule('a', 'cd'),
         1
     ), 
-    'bcdb')
+    'bcde')
+
+assert eq(
+    grammar_rule_apply(
+        'ab',
+        grammar_rule('a', 'cd'),
+        0
+    ), 
+    'cdb')
