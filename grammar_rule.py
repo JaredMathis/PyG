@@ -19,4 +19,4 @@ class grammar_rule:
         return str(self.left) + ' > ' + str(self.right)
 
 assert str(grammar_rule('a', 'aa')) == "['a'] > ['a', 'a']"
-assert log_result(str)(grammar_rule(['a'], ['a','a'])) == "['a'] > ['a', 'a']"
+assert (str)(grammar_rule(['a'], ['a','a'])) == "['a'] > ['a', 'a']"
