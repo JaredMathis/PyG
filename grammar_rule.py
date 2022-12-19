@@ -23,5 +23,8 @@ assert eq(
     str(grammar_rule('a', 'aa')), 
     "['a'] > ['a', 'a']")
 assert eq(
+    str(grammar_rule('a', 'aa')), 
+    "['a'] > ['a', 'a']")
+assert eq(
     str(grammar_rule(['a'], ['a','a'])), 
     "['a'] > ['a', 'a']")
