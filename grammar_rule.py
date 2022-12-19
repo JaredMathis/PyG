@@ -17,8 +17,4 @@ class grammar_rule:
     def __str__(self) -> str:
         return str(self.left) + ' > ' + str(self.right)
 
-g = grammar_rule(
-    'a', 
-    'aa')
-
-print(g)
+assert str(grammar_rule('a', 'aa')) == 'a > aa'
