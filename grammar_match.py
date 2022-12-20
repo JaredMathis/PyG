@@ -25,14 +25,10 @@ def grammar_match(g, start, examples, counters, depth):
         if d in remaining:
             remaining.remove(d)
         if d in set_counters:
-            if logging:
-                print('counter found: ' + str(d))
-            return False
+            return 'counter found: ' + str(d)
 
     if len(remaining) > 0:
-        if logging:
-            print('extra found: ' + str([str(r) for r in remaining]))
-        return False
+        return 'extra found: ' + str([str(r) for r in remaining])
 
     return True
 
@@ -46,13 +42,15 @@ assert eq(
     True)
 
 assert eq(
-    grammar_match(
-        grammar([grammar_rule('a','aa')]), 
-        'a', 
-        ['b'], 
-        ['a'], 
-        0), 
-    False)
+    type(
+        grammar_match(
+            grammar([grammar_rule('a','aa')]), 
+            'a', 
+            ['b'], 
+            ['a'], 
+            0)
+    ), 
+    str)
 
 assert eq(
     grammar_match(
