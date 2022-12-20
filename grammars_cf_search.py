@@ -1,3 +1,4 @@
+from grammar import grammar
 from grammar_cf_random import grammar_cf_random
 from grammar_match import grammar_match
 from grammar_rule import grammar_rule
@@ -24,7 +25,15 @@ def symbols_parse(symbols):
 
     start = symbols[0]
     return symbols,start
-    
-print(grammars_cf_search(2, pattern_grow()))
+
+def test(pattern):
+    g = grammars_cf_search(2, pattern)
+    return type(g) == grammar
+
+patterns = [
+    pattern_grow()
+]
+for p in patterns:
+    assert test(p)
 
 
