@@ -1,3 +1,4 @@
 def int_natural(n):
-    assert type(n) == int
+    if type(n) != int:
+        return False
     return n >= 0

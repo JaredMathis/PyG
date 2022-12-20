@@ -3,9 +3,9 @@ from patterns.pattern import pattern
 
 def pattern_after():
     return pattern(
-        ['a', 'ba', 'bba'], 
+        ['0', '10', '110'], 
         [
-            'b', 
-            'ab', 'bb', 'aa', 
-            'bab', 'aab', 'abb', 'aab', 'bbb', 'aaa'
+            '1', 
+            '01', '11', '00', 
+            '101', '001', '011', '001', '111', '000'
         ])

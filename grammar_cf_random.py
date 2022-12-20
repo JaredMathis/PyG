@@ -5,7 +5,7 @@ from grammar_rule_part import grammar_rule_part
 from int_natural import int_natural
 
 
-def grammar_random(symbols, rule_count=None):
+def grammar_cf_random(symbols, rule_count=None):
     if int_natural(symbols):
         symbols = range(symbols)
     if rule_count == None:
@@ -22,5 +22,3 @@ def grammar_rule_random(symbols):
     small = [random.choice(symbols)]
     big = [random.choice(symbols), random.choice(symbols)]
     return grammar_rule(small, big)
-
-print(grammar_random(3))

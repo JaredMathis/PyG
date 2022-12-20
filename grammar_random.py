@@ -24,4 +24,4 @@ def grammar_rule_random(symbols):
     else:
         return grammar_rule(big, small)
 
-print(grammar_random(3))
+(grammar_random(3))

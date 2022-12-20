@@ -1,6 +1,9 @@
 class grammar_rule_part:
     def __init__(self, part) -> None:
-        if type(part) == str:
+        if type(part) == grammar_rule_part:
+            part = part.part
+        if type(part) != list:
+            assert type(part) == str
             part = [*part]
         self.part = part
     

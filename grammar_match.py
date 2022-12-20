@@ -54,8 +54,8 @@ assert eq(
 
 assert eq(
     grammar_match(
-        grammar([grammar_rule('a','aa')]), 
-        'a', 
+        grammar([grammar_rule('0','00')]), 
+        '0', 
         pattern_grow().examples, 
         pattern_grow().counters, 
         1), 
@@ -63,8 +63,8 @@ assert eq(
 
 assert eq(
     grammar_match(
-        grammar([grammar_rule('a','ba')]), 
-        'a', 
+        grammar([grammar_rule('0','10')]), 
+        '0', 
         pattern_after().examples, 
         pattern_after().counters,  
         2), 

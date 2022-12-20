@@ -4,12 +4,12 @@ from patterns.pattern import pattern
 def pattern_grow():
     return pattern(
         [
-            'a', 
-            'aa'
+            '0', 
+            '00'
         ], 
         [
-            'b', 
-            'ba', 
-            'ab', 
-            'ba'
+            '1', 
+            '10', 
+            '01', 
+            '10'
         ])
