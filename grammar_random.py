@@ -5,11 +5,9 @@ from grammar_rule_part import grammar_rule_part
 from int_natural import int_natural
 
 
-def grammar_random(symbols, examples, counters):
+def grammar_random(symbols):
     if int_natural(symbols):
         symbols = range(symbols)
-    assert type(examples) == list
-    assert type(counters) == list
 
     rules = []
     
@@ -26,4 +24,4 @@ def grammar_rule_random(symbols):
     else:
         return grammar_rule(big, small)
 
-print(grammar_random(3, [], []))
+print(grammar_random(3))
