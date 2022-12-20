@@ -19,7 +19,7 @@ def grammar_rule_apply(current, rule):
 def grammar_rule_apply_list(current, rule):
     return [item for item in grammar_rule_apply(current, rule)]
 
-eq(
+assert eq(
     grammar_rule_apply_list(
         'aaa',
         grammar_rule('a', 'bb')
