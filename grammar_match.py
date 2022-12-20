@@ -1,3 +1,4 @@
+from eq import eq
 from grammar import grammar
 from grammar_derive import grammar_derive
 from grammar_rule import grammar_rule
@@ -32,4 +33,11 @@ def grammar_match(g, start, examples, counters, depth):
 
     return True
 
-print(grammar_match(grammar([grammar_rule('a','aa')]), 'a', ['a'], ['b'], 3))
+assert eq(
+    grammar_match(
+        grammar([grammar_rule('a','aa')]), 
+        'a', 
+        ['a'], 
+        ['b'], 
+        0), 
+    True)
