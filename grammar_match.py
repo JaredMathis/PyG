@@ -5,6 +5,8 @@ from grammar_rule_part import grammar_rule_part
 
 
 def grammar_match(g, start, examples, counters, depth):
+    logging = False
+
     assert type(g) == grammar
     assert type(examples) == list
     assert type(counters) == list
@@ -19,11 +21,13 @@ def grammar_match(g, start, examples, counters, depth):
         if d in remaining:
             remaining.remove(d)
         if d in set_counters:
-            print('counter found: ' + str(d))
+            if logging:
+                print('counter found: ' + str(d))
             return False
 
     if len(remaining) > 0:
-        print('extra found: ' + str([str(r) for r in remaining]))
+        if logging:
+            print('extra found: ' + str([str(r) for r in remaining]))
         return False
 
     return True
