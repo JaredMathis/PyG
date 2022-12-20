@@ -56,6 +56,6 @@ assert eq(
         grammar([grammar_rule('a','aa')]), 
         'a', 
         ['a', 'aa'], 
-        ['b'], 
+        ['b', 'ba', 'ab', 'bc'], 
         1), 
     True)
