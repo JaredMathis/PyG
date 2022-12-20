@@ -1,5 +1,6 @@
 from eq import eq
 from grammar_rule import grammar_rule
+from log_me import log_me
 
 
 class grammar:
@@ -19,4 +20,8 @@ class grammar:
 assert eq(
     grammar(grammar_rule('a','aa')), 
     """["['a'] > ['a', 'a']"]"""
+    )
+assert eq(
+    (grammar([grammar_rule('a','bc'), grammar_rule('b','bb')])), 
+    """["['a'] > ['b', 'c']", "['b'] > ['b', 'b']"]"""
     )
