@@ -73,6 +73,6 @@ assert eq(
         [
             'b', 
             'ab', 'bb', 'aa', 
-            'bab', 'aab', 'abb', 'aab', 'bbb'], 
+            'bab', 'aab', 'abb', 'aab', 'bbb', 'aaa'], 
         2), 
     True)
