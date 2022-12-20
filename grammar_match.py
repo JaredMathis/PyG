@@ -6,8 +6,6 @@ from grammar_rule_part import grammar_rule_part
 
 
 def grammar_match(g, start, examples, counters, depth):
-    logging = True
-
     assert type(g) == grammar
     assert type(examples) == list
     assert type(counters) == list
