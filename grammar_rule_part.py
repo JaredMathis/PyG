@@ -11,3 +11,6 @@ class grammar_rule_part:
         if type(__o) == str:
             __o = grammar_rule_part(__o)
         return str(self) == str(__o)
+    
+    def __hash__(self) -> int:
+        return hash(str(self))
