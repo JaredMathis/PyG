@@ -18,6 +18,9 @@ def grammar_match(g, start, examples, counters, depth):
     remaining = set(examples)
     set_counters = set(counters)
 
+    if len(remaining.intersection(set_counters)) > 0:
+        raise "Examples and Counters must be mutually exclusive"
+
     for d in grammar_derive(g, start, depth):
         if d in remaining:
             remaining.remove(d)
@@ -56,6 +59,20 @@ assert eq(
         grammar([grammar_rule('a','aa')]), 
         'a', 
         ['a', 'aa'], 
-        ['b', 'ba', 'ab', 'bc'], 
+        [
+            'b', 
+            'ba', 'ab', 'ba'], 
         1), 
+    True)
+
+assert eq(
+    grammar_match(
+        grammar([grammar_rule('a','ba')]), 
+        'a', 
+        ['a', 'ba', 'bba'], 
+        [
+            'b', 
+            'ab', 'bb', 'aa', 
+            'bab', 'aab', 'abb', 'aab', 'bbb'], 
+        2), 
     True)
