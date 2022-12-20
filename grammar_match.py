@@ -3,6 +3,7 @@ from grammar import grammar
 from grammar_derive import grammar_derive
 from grammar_rule import grammar_rule
 from grammar_rule_part import grammar_rule_part
+from patterns.after import pattern_after
 from patterns.grow import pattern_grow
 
 
@@ -64,10 +65,7 @@ assert eq(
     grammar_match(
         grammar([grammar_rule('a','ba')]), 
         'a', 
-        ['a', 'ba', 'bba'], 
-        [
-            'b', 
-            'ab', 'bb', 'aa', 
-            'bab', 'aab', 'abb', 'aab', 'bbb', 'aaa'], 
+        pattern_after().examples, 
+        pattern_after().counters,  
         2), 
     True)
