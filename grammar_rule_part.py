@@ -5,6 +5,8 @@ class grammar_rule_part:
         if type(part) != list:
             assert type(part) == str
             part = [*part]
+        for p in part:
+            assert type(p) == str
         self.part = part
     
     def __str__(self) -> str:
