@@ -8,7 +8,6 @@ from patterns.grow import pattern_grow
 
 def grammars_cf_search(symbols, pattern):
     symbols, start = symbols_parse(symbols)
-    rules = []
 
     i = 1
     while True:
