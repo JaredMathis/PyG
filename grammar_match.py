@@ -6,7 +6,7 @@ from grammar_rule_part import grammar_rule_part
 
 
 def grammar_match(g, start, examples, counters, depth):
-    logging = False
+    logging = True
 
     assert type(g) == grammar
     assert type(examples) == list
@@ -40,4 +40,22 @@ assert eq(
         ['a'], 
         ['b'], 
         0), 
+    True)
+
+assert eq(
+    grammar_match(
+        grammar([grammar_rule('a','aa')]), 
+        'a', 
+        ['b'], 
+        ['a'], 
+        0), 
+    False)
+
+assert eq(
+    grammar_match(
+        grammar([grammar_rule('a','aa')]), 
+        'a', 
+        ['a', 'aa'], 
+        ['b'], 
+        1), 
     True)
